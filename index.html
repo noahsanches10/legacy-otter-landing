@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+      // Get the current path and query parameters
+      const path = window.location.pathname;
+      const params = window.location.search;
+
+      // Construct the new URL
+      const newBase = "https://getrotor.com";
+      const newUrl = newBase + path + params;
+
+      // Redirect
+      window.location.replace(newUrl);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to https://getrotor.com...</p>
+  </body>
+</html>
