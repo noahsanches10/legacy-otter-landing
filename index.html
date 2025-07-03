@@ -1,22 +1,48 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Redirecting...</title>
-    <script>
-      // Get the current path and query parameters
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>We’ve Rebranded</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .logos img {
+      max-height: 80px;
+    }
+  </style>
+  <script>
+    setTimeout(() => {
       const path = window.location.pathname;
-      const params = window.location.search;
-
-      // Construct the new URL
-      const newBase = "https://getrotor.com";
-      const newUrl = newBase + path + params;
-
-      // Redirect
+      const search = window.location.search;
+      const newUrl = "https://app.getrotor.com" + path + search;
       window.location.replace(newUrl);
-    </script>
-  </head>
-  <body>
-    <p>Redirecting to https://getrotor.com...</p>
-  </body>
+    }, 3000);
+  </script>
+</head>
+<body>
+  <div class="logos">
+    <img src="/old_logo.png" alt="Old Logo" />
+    <span style="font-size: 24px;">➡️</span>
+    <img src="/new_logo.png" alt="New Logo" />
+  </div>
+  <h2>We’ve rebranded!</h2>
+  <p>You’re being redirected to our new site at <strong>getrotor.com</strong></p>
+  <p>If you’re not redirected in 3 seconds, <a href="#" id="manual-link">click here</a>.</p>
+
+  <script>
+    // In case JavaScript is slow or blocked
+    document.getElementById("manual-link").href = "https://app.getrotor.com" + window.location.pathname + window.location.search;
+  </script>
+</body>
 </html>
